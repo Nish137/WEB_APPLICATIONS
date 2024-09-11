@@ -1,0 +1,47 @@
+
+spring:
+  datasource:
+        driverClassName: org.postgresql.Driver
+        password: Mathew$@007N
+        url: jdbc:postgresql://localhost:5432/departmentdb
+        username: postgres
+  jpa:
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.PostgreSQLDialect
+                format_sql: true
+        show-sql: true
+        
+        welcome:
+         message: Hello SpringBoot family!!
+         
+         management:
+           endpoints:
+             web:
+              exposure:
+                include: "*"
+                
+---
+
+ spring:
+  config:
+    activate:
+      on-profile: "qa"
+  datasource:
+        driverClassName: org.postgresql.Driver
+        password: Mathew$@007N
+        url: jdbc:postgresql://localhost:5432/departmentdb-qa
+        username: postgres
+  jpa:
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.PostgreSQLDialect
+                format_sql: true
+        show-sql: true
+        
+   
+    
